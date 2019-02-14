@@ -2,8 +2,8 @@
 
 <h3>Description</h3>
 <% @cocktail.doses.each do |dose| %>
-  <p><%= dose.description %>
-    <%= link_to "[X]", cocktail_path(params[:id]),
+  <p><%= dose.description %> - <%= dose.ingredient.name %>
+    <%= link_to "[X]", dose_path(dose.id),
       method: :delete,
       data: { confirm: "Are you sure?" } %>
   </p>
@@ -12,6 +12,5 @@
 <%= link_to 'Add a new dose', new_cocktail_dose_path(@cocktail), class: 'btn btn-success' %>
 <br><br>
 <%= link_to 'Back to list', cocktails_path %>
-
 
 
