@@ -1,9 +1,75 @@
-<h1>List of the Cocktails</h1>
 
-<p><% @cocktails.each do |cocktail| %>
-  <li><%= link_to cocktail.name, cocktail_path(cocktail.id) %></li>
-  <% end %>
-</p>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.unsplash.com/photo-1536935338788-846bb9981813?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=986&q=80');">
+  <div class="banner-content">
+    <h1>Mister Cocktail</h1>
+    <p>Create your own cocktail</p>
+    <a href='http://localhost:3000/cocktails/new' class="btn btn-success btn-lg">Let's do this!</a>
+  </div>
+</div>
+
+
+<div>
+<h1>Your favorite Cocktails</h1>
+</div>
+
+<div class="container container-margin-top">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <!-- insert <div class="card"> -->
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1531387367216-681093c0279b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1016&q=80');">
+     <!--    <div class="card-category">Popular</div> -->
+        <div class="card-description">
+          <h2>Mojito</h2>
+   <!--        <p>Very cool city, the best</p> -->
+        </div>
+<!--         <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+ -->        <a class="card-link" href="#" ></a>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <!-- insert <div class="card"> -->
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1486947799489-3fabdd7d32a6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80');">
+   <!--      <div class="card-category">Popular</div> -->
+        <div class="card-description">
+          <h2>Sex On The Beach</h2>
+          <!-- <p>Very cool city, the best</p> -->
+        </div>
+<!--         <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+ -->        <a class="card-link" href="#" ></a>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <!-- insert <div class="card"> -->
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.ecosia.org/lU4c1t4QstKzKz4dnVzRIFWRA_E=/0x390/smart/http%3A%2F%2Fcdn.liquor.com%2Fwp-content%2Fuploads%2F2017%2F07%2F13091451%2Fspanish-gin-and-tonic-1200x628-social.jpg');">
+    <!--     <div class="card-category">Popular</div> -->
+        <div class="card-description">
+          <h2>Gin Tonic</h2>
+          <!-- <p>Very cool city, the best</p> -->
+        </div>
+<!--         <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+ -->        <a class="card-link" href="#" ></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container container-margin-top">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+        <h2><% @cocktails.each do |cocktail| %>
+
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1531387367216-681093c0279b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1016&q=80');">
+          <div class="card-description">
+            <%= link_to cocktail.name, cocktail_path(cocktail.id) %>
+          </div>
+          </div>
+        <% end %></h2>
+    </div>
+  </div>
+</div>
 
 <%= link_to 'Add a new cocktail', new_cocktail_path, class: 'btn btn-success' %>
+
 
